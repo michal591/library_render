@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Library Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('list_books') }}">Books</a></li>
+                <li><a href="{{ url_for('list_loans') }}">Loans</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQgJxNrdnFyFeIymgdl2u9Z_aQIcA2oD5Fvg&s"
+            alt="Library Image">
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Library Management System</p>
+    </footer>
+</body>
+
+</html>

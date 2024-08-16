@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Loans</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Member ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Book Title</th>
+            <th>Loan Date</th>
+            <th>Due Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for loan in loans %}
+        <tr>
+            <td>{{ loan.member_id }}</td>
+            <td>{{ loan.first_name }}</td>
+            <td>{{ loan.last_name }}</td>
+            <td>{{ loan.book_title }}</td>
+            <td>{{ loan.loan_date }}</td>
+            <td>{{ loan.due_date }}</td>
+            <td>{% if loan.return_date %}Returned{% else %}On Loan{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
